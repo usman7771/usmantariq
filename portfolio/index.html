@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usman Tariq </title>
+  <!-- SEO Meta -->
+  <meta name="description" content="Usman Tariq — IT graduate, SEO Executive, Full Stack MERN developer. Specializing in technical SEO, local SEO, web development, and digital growth.">
+  <meta property="og:title" content="Usman Tariq · Portfolio">
+  <meta property="og:description" content="SEO & Web Development portfolio. Information Technology graduate with hands-on experience in search visibility, organic growth, and full-stack development.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b0e14">
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <style>
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b0e14;
+      color: #eaeef2;
+      line-height: 1.6;
+      cursor: default;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #141a24; }
+    ::-webkit-scrollbar-thumb { background: #98ff08; border-radius: 12px; }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #98ff08, #6fcc00);
+      border-radius: 4px;
+    }
+    .glass {
+      background: rgba(20, 26, 36, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(152, 255, 8, 0.15);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.8);
+    }
+    .btn-primary {
+      background: #98ff08;
+      color: #0b0e14;
+      font-weight: 600;
+      padding: 12px 32px;
+      border-radius: 50px;
+      border: none;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 0 20px rgba(152, 255, 8, 0.2);
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px #98ff0880;
+      background: #aaff1a;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #98ff08;
+      color: #98ff08;
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover {
+      background: #98ff08;
+      color: #0b0e14;
+      box-shadow: 0 0 25px #98ff0850;
+    }
+
+    /* ========== LOADER ========== */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #0b0e14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.6s, visibility 0.6s;
+    }
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-spinner {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 5px solid #1f2a38;
+      border-top: 5px solid #98ff08;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ========== CUSTOM CURSOR ========== */
+    .cursor-glow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #98ff0830 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      transition: opacity 0.2s;
+      opacity: 0.5;
+    }
+
+    /* ========== STICKY NAV ========== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 0;
+      background: rgba(11, 14, 20, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(152, 255, 8, 0.08);
+      z-index: 1000;
+      transition: 0.2s;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #98ff08, #b5ff4a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      position: relative;
+      color: #bcc6d4;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #98ff08;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #98ff08;
+      transition: 0.25s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-resume {
+      background: #98ff08;
+      color: #0b0e14;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      transition: 0.2s;
+    }
+    .nav-resume:hover { background: #bbff44; }
+    .hamburger {
+      display: none;
+      font-size: 1.6rem;
+      color: #98ff08;
+      cursor: pointer;
+    }
+
+    /* ========== SCROLL PROGRESS ========== */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #98ff08, #c4ff4a);
+      z-index: 1001;
+      width: 0%;
+      transition: width 0.1s;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-content h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .hero-content h1 span {
+      color: #98ff08;
+    }
+    .hero-typing {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #bcc6d4;
+      margin: 12px 0 20px;
+      min-height: 3.2rem;
+    }
+    .hero-typing .cursor {
+      display: inline-block;
+      width: 3px;
+      background: #98ff08;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #9aa9b9;
+      max-width: 500px;
+      margin-bottom: 28px;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 1.4rem;
+    }
+    .social-icons a {
+      color: #bcc6d4;
+      transition: 0.2s;
+    }
+    .social-icons a:hover {
+      color: #98ff08;
+      transform: translateY(-3px);
+    }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== PROFILE IMAGE ===== */
+    .profile-image {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #98ff08;
+      box-shadow: 0 0 25px rgba(152, 255, 8, 0.5);
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+    .profile-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(152, 255, 8, 0.8);
+    }
+    .profile-placeholder {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1f2a38, #0b0e14);
+      border: 2px solid #98ff0840;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: 800;
+      color: #98ff08;
+      box-shadow: 0 0 60px #98ff0820;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ========== FLOATING SHAPES ========== */
+    .floating-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(152, 255, 8, 0.05);
+      animation: float 18s infinite alternate ease-in-out;
+    }
+    .shape:nth-child(1) { width: 300px; height: 300px; top: 10%; left: -5%; }
+    .shape:nth-child(2) { width: 200px; height: 200px; bottom: 10%; right: 5%; animation-duration: 24s; }
+    .shape:nth-child(3) { width: 150px; height: 150px; top: 50%; left: 60%; animation-duration: 14s; background: rgba(152,255,8,0.03); }
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, -40px) scale(1.1); }
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 2;
+    }
+    /* about */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .about-text p {
+      margin-bottom: 16px;
+      color: #cbd5e1;
+    }
+    .about-highlight {
+      color: #98ff08;
+      font-weight: 600;
+    }
+    /* services cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: rgba(20, 26, 36, 0.5);
+      backdrop-filter: blur(6px);
+      padding: 28px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(152, 255, 8, 0.08);
+      transition: 0.25s;
+      text-align: center;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #98ff08;
+      box-shadow: 0 12px 30px #98ff0815;
+    }
+    .service-card i {
+      font-size: 2.2rem;
+      color: #98ff08;
+      margin-bottom: 14px;
+    }
+    .service-card h4 {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    /* skills progress */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 50px;
+    }
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .skill-item .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+    }
+    .progress-bar {
+      height: 8px;
+      background: #1f2a38;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #98ff08, #bbff44);
+      border-radius: 12px;
+      width: 0%;
+      transition: width 1.2s ease;
+    }
+    /* experience timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .timeline-item {
+      border-left: 3px solid #98ff08;
+      padding-left: 24px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: #98ff08;
+      border-radius: 50%;
+      position: absolute;
+      left: -8px;
+      top: 6px;
+    }
+    .timeline-item h3 { font-weight: 700; }
+    .timeline-item .meta { color: #98ff08; font-weight: 500; }
+    /* project cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .project-card {
+      background: rgba(20, 26, 36, 0.5);
+      backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 24px;
+      border: 1px solid rgba(152, 255, 8, 0.06);
+      transition: 0.25s;
+    }
+    .project-card:hover {
+      transform: scale(1.01);
+      border-color: #98ff08;
+    }
+    .project-card h4 { font-size: 1.3rem; margin-bottom: 8px; }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .project-tags span {
+      background: #1f2a38;
+      padding: 2px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #98ff08;
+    }
+    .project-links a {
+      margin-right: 16px;
+      color: #bcc6d4;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .project-links a:hover { color: #98ff08; }
+    /* certs */
+    .certs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .cert-card {
+      background: rgba(20,26,36,0.5);
+      backdrop-filter: blur(4px);
+      padding: 20px 32px;
+      border-radius: 40px;
+      border: 1px solid #98ff0820;
+      font-weight: 600;
+    }
+    
+    /* ===========================
+       BLOG SECTION - ONLY 1 CARD
+    =========================== */
+    #blog {
+      padding: 100px 0;
+      background: #0d1117;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 50px auto 0;
+    }
+    .blog-card {
+      background: #151b23;
+      border: 1px solid rgba(152, 255, 8, 0.2);
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: 0.4s ease;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .blog-card:hover {
+      transform: translateY(-10px);
+      border-color: #98ff08;
+      box-shadow: 0 0 30px rgba(152, 255, 8, 0.35);
+    }
+    .blog-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: 0.5s;
+      background: #0d1117;
+    }
+    .blog-card:hover .blog-image {
+      transform: scale(1.03);
+    }
+    .blog-card h4 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 22px 24px 12px;
+      line-height: 1.4;
+    }
+    .blog-card p {
+      color: #9aa9b9;
+      margin: 0 24px 28px;
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #98ff08;
+      transform: scaleX(0);
+      transition: 0.4s;
+      transform-origin: left;
+    }
+    .blog-card:hover::before {
+      transform: scaleX(1);
+    }
+    .blog-card::after {
+      content: "Read Article →";
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      color: #98ff08;
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: 0.4s;
+    }
+    .blog-card:hover::after {
+      opacity: 1;
+    }
+
+    /* stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-item .number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #98ff08;
+    }
+    .stat-item .label {
+      color: #9aa9b9;
+    }
+    /* why me */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: rgba(20,26,36,0.3);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #1f2a38;
+    }
+    .feature-card i { color: #98ff08; font-size: 2rem; margin-bottom: 8px; }
+    /* contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: #141a24;
+      border: 1px solid #1f2a38;
+      border-radius: 16px;
+      color: #eaeef2;
+      font-family: inherit;
+      margin-bottom: 16px;
+      transition: 0.2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: #98ff08;
+      outline: none;
+    }
+    .contact-info a {
+      display: block;
+      margin-bottom: 10px;
+      color: #bcc6d4;
+    }
+    .contact-info a i { width: 28px; color: #98ff08; }
+    .map-placeholder {
+      height: 200px;
+      background: #141a24;
+      border-radius: 20px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9aa9b9;
+      border: 1px dashed #2a3648;
+    }
+    /* footer */
+    footer {
+      border-top: 1px solid #1f2a38;
+      padding: 40px 0 20px;
+      margin-top: 20px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .back-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #98ff08;
+      color: #0b0e14;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 0 30px #98ff0830;
+      transition: 0.2s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+      cursor: pointer;
+    }
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-content h1 { font-size: 2.8rem; }
+      .hero-desc { margin: 0 auto 28px; }
+      .hero-btns { justify-content: center; }
+      .social-icons { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; flex-direction: column; gap: 16px; background: #0b0e14f0; backdrop-filter: blur(12px); padding: 30px; position: absolute; top: 70px; right: 24px; border-radius: 24px; border: 1px solid #1f2a38; min-width: 200px; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: block; }
+      .profile-image { width: 250px; height: 250px; }
+      .profile-placeholder { width: 200px; height: 200px; font-size: 3rem; }
+      .blog-grid { max-width: 100%; }
+      .blog-image { height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .section-title { font-size: 2rem; }
+      .container { padding: 0 16px; }
+      .profile-image { width: 200px; height: 200px; }
+      .blog-image { height: 180px; }
+      .blog-card h4 { font-size: 1.2rem; }
+      .blog-card p { font-size: 0.85rem; }
+    }
+    /* Reveal on scroll (Intersection Observer) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- LOADER -->
+  <div id="loader"><div class="loader-spinner"></div></div>
+  <!-- SCROLL PROGRESS -->
+  <div id="progress-bar"></div>
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- STICKY NAV -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">UT</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="floating-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Usman <span>Tariq</span></h1>
+        <div class="hero-typing" id="typingText">SEO Executive<span class="cursor"></span></div>
+        <p class="hero-desc">IT graduate · SEO specialist · MERN STACK DEVELOPER . I turn data into growth and code into experiences.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
+          <a href="#projects" class="btn-outline"><i class="fas fa-eye"></i> View Projects</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/usman-tariq-82a242382/?skipRedirect=true"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="mailto:musmantariq7771@gmail.com" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+</a>
+        <a href="https://wa.me/923007771564" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+        </div>
+      </div>
+      <div class="hero-image">
+    <img src="images/usman.png" alt="Usman Tariq" class="profile-image">
+</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p><span class="about-highlight">Information Technology graduate</span> with hands-on experience in <span class="about-highlight">SEO and Web Development</span>. I combine technical expertise with data-driven marketing to boost organic visibility and build responsive, modern web applications.</p>
+          <p>Passionate about <span class="about-highlight">business growth</span>, emerging technologies, and creating exceptional user experiences. I specialize in Google Search Console, Technical SEO, and local search strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background: #0f131b;">
+    <div class="container">
+      <h2 class="section-title reveal">Services</h2>
+      <div class="services-grid">
+        <div class="service-card reveal"><i class="fas fa-map-pin"></i><h4>Local SEO</h4><p style="font-size:0.85rem; color:#9aa9b9;">GBP optimization, citations, local ranking.</p></div>
+        <div class="service-card reveal"><i class="fas fa-code"></i><h4>Technical SEO</h4><p style="font-size:0.85rem; color:#9aa9b9;">Site audits, speed, crawlability, indexation.</p></div>
+        <div class="service-card reveal"><i class="fas fa-file-alt"></i><h4>On‑Page SEO</h4><p style="font-size:0.85rem; color:#9aa9b9;">Content, meta tags, internal linking.</p></div>
+        <div class="service-card reveal"><i class="fas fa-link"></i><h4>Off‑Page SEO</h4><p style="font-size:0.85rem; color:#9aa9b9;">Backlinks, authority building.</p></div>
+        <div class="service-card reveal"><i class="fas fa-store"></i><h4>Google Business Profile</h4><p style="font-size:0.85rem; color:#9aa9b9;">Optimization & management.</p></div>
+        <div class="service-card reveal"><i class="fas fa-chart-line"></i><h4>SEO Audit & Analysis</h4><p style="font-size:0.85rem; color:#9aa9b9;">Competitor & keyword research.</p></div>
+        <div class="service-card reveal"><i class="fas fa-laptop-code"></i><h4>Web Development</h4><p style="font-size:0.85rem; color:#9aa9b9;">Responsive sites, landing pages, business sites.</p></div>
+        <div class="service-card reveal"><i class="fas fa-wordpress"></i><h4>WordPress</h4><p style="font-size:0.85rem; color:#9aa9b9;">Custom themes, optimization, maintenance.</p></div>
+        <div class="service-card reveal"><i class="fas fa-envelope"></i><h4>Email Marketing</h4><p style="font-size:0.85rem; color:#9aa9b9;">Campaigns, automation, lead nurturing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Skills</h2>
+      <div class="skills-grid" id="skillsContainer">
+        <!-- filled by js with progress bars -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <h4>Online Event Management System</h4>
+          <p style="color:#9aa9b9;">University events platform with authentication, admin dashboard, real‑time notifications.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span><span>PHP</span></div>
+          <p><i class="fas fa-user-graduate"></i> Student/Admin auth · <i class="fas fa-chart-simple"></i> Analytics · <i class="fas fa-bell"></i> Feedback</p>
+          <div class="project-links"><a href="#"><i class="fab fa-github"></i> Code</a><a href="#"><i class="fas fa-external-link-alt"></i> Live</a></div>
+        </div>
+        <!-- add another project card placeholder (could be the same) -->
+        <div class="project-card reveal">
+          <h4>SEO Dashboard (Concept)</h4>
+          <p style="color:#9aa9b9;">Competitor tracking, keyword rank monitoring, site audit visualizer.</p>
+          <div class="project-links"><a href="#"><i class="fab fa-github"></i> Code</a><a href="#"><i class="fas fa-external-link-alt"></i> Live</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="container">
+        <h2 class="section-title reveal">Blog</h2>
+
+        <div class="blog-grid">
+
+            <a href="blog1.html" class="blog-card reveal">
+                <img src="images/blog1.png" alt="Build a Strong Online Presence with SEO" class="blog-image">
+
+                <h4>Build a Strong Online Presence with SEO</h4>
+
+                <p style="font-size:0.85rem; color:#9aa9b9;">
+                    Organic traffic, visibility, and authority.
+                </p>
+            </a>
+        </div>
+    </div>
+</section>
+
+  <!-- STATS -->
+  <section id="stats" style="background:#0f131b;">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal"><div class="number" data-target="12">0</div><div class="label">Projects Completed</div></div>
+        <div class="stat-item reveal"><div class="number" data-target="3">0</div><div class="label">SEO Experience (years)</div></div>
+        <div class="stat-item reveal"><div class="number" data-target="18">0</div><div class="label">Technologies</div></div>
+        <div class="stat-item reveal"><div class="number" data-target="6">0</div><div class="label">Certificates</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE ME -->
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title reveal">Why Choose Me</h2>
+      <div class="features-grid">
+        <div class="feature-card reveal"><i class="fas fa-code"></i><h4>Modern Dev</h4><p style="font-size:0.8rem; color:#9aa9b9;">MERN, PHP, responsive.</p></div>
+        <div class="feature-card reveal"><i class="fas fa-search"></i><h4>SEO Friendly</h4><p style="font-size:0.8rem; color:#9aa9b9;">Organic growth, visibility.</p></div>
+        <div class="feature-card reveal"><i class="fas fa-mobile-alt"></i><h4>Responsive</h4><p style="font-size:0.8rem; color:#9aa9b9;">All devices, pixel‑perfect.</p></div>
+        <div class="feature-card reveal"><i class="fas fa-rocket"></i><h4>Fast Performance</h4><p style="font-size:0.8rem; color:#9aa9b9;">Optimized speed, Core Web Vitals.</p></div>
+        <div class="feature-card reveal"><i class="fas fa-broom"></i><h4>Clean Code</h4><p style="font-size:0.8rem; color:#9aa9b9;">Maintainable, scalable.</p></div>
+        <div class="feature-card reveal"><i class="fas fa-chart-simple"></i><h4>Business Growth</h4><p style="font-size:0.8rem; color:#9aa9b9;">Data‑driven decisions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:#0f131b;">
+    <div class="container">
+      <h2 class="section-title reveal">Contact</h2>
+      <div class="contact-grid">
+        <div>
+         <form action="https://formsubmit.co/musmantariq7771@gmail.com" method="POST" class="contact-form">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <input type="text" name="subject" placeholder="Subject" required>
+
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <!-- Disable Captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Email Subject -->
+    <input type="hidden" name="_subject" value="New Portfolio Contact Form">
+
+    <!-- Optional: Redirect after submit -->
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+    <button class="btn-primary" type="submit">
+        <i class="fas fa-paper-plane"></i> Send Message
+    </button>
+
+</form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><span class="logo">UT</span><p style="color:#9aa9b9; margin-top:6px;"></p></div>
+        
+          <a href="#"><i class="fas fa-envelope"></i> usmantariq7771@gmail.com</a>
+          <a href="https://www.linkedin.com/in/usman-tariq-82a242382/"><i class="fab fa-linkedin"></i> Linkedin</a>
+          <a href="https://share.google/T27QiDknAH7iW59gs"><i class="fas fa-store"></i> Google Business Profile</a>
+          <a href="https://wa.me/923007771564?text=Hello%20Usman,%20I%20visited%20your%20portfolio." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i> What's app
+</a>
+        </div>
+      <div style="border-top:1px solid #1f2a38; margin-top:30px; padding-top:20px; text-align:center; color:#9aa9b9; font-size:0.9rem;">© 2025 Usman Tariq. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <div class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></div>
+
+  <script>
+    // ========== LOADER ==========
+    window.addEventListener('load', () => {
+      document.getElementById('loader').classList.add('hidden');
+    });
+
+    // ========== CURSOR GLOW ==========
+    const glow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    // ========== TYPING ==========
+    const roles = ['SEO Executive', 'Web Developer', 'Full Stack Developer', 'Digital Marketing Specialist', 'Local SEO Expert', 'Technical SEO Expert'];
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
+    const typingEl = document.getElementById('typingText');
+    function typeEffect() {
+      const current = roles[roleIndex];
+      if (!isDeleting) {
+        typingEl.innerHTML = current.slice(0, charIndex+1) + '<span class="cursor"></span>';
+        charIndex++;
+        if (charIndex === current.length) setTimeout(() => isDeleting = true, 1500);
+      } else {
+        typingEl.innerHTML = current.slice(0, charIndex-1) + '<span class="cursor"></span>';
+        charIndex--;
+        if (charIndex === 0) { isDeleting = false; roleIndex = (roleIndex+1) % roles.length; }
+      }
+      setTimeout(typeEffect, isDeleting ? 50 : 120);
+    }
+    typeEffect();
+
+    // ========== SKILLS (progress bars) ==========
+    const skillsData = [
+      { name: 'HTML5', pct: 90 }, { name: 'CSS3', pct: 85 }, { name: 'JavaScript', pct: 80 },
+      { name: 'Core PHP', pct: 75 }, { name: 'Node.js', pct: 70 }, { name: 'React.js', pct: 68 },
+      { name: 'Express.js', pct: 65 }, { name: 'Bootstrap', pct: 82 }, { name: 'MongoDB', pct: 60 },
+      { name: 'Git & GitHub', pct: 78 }, { name: 'WordPress', pct: 72 }, { name: 'OpenAI', pct: 60 },
+      { name: 'Google Search Console', pct: 85 }, { name: 'Google Analytics', pct: 80 },
+      { name: 'Ahrefs / SEMrush', pct: 82 }, { name: 'Figma / PS', pct: 65 },
+      { name: 'Technical SEO', pct: 88 }, { name: 'Local SEO', pct: 90 }, { name: 'On‑Page SEO', pct: 85 }, { name: 'Off‑Page SEO', pct: 78 }
+    ];
+    const container = document.getElementById('skillsContainer');
+    skillsData.forEach(s => {
+      const div = document.createElement('div');
+      div.className = 'skill-item reveal';
+      div.innerHTML = `
+        <div class="skill-label"><span>${s.name}</span><span>${s.pct}%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="${s.pct}"></div></div>
+      `;
+      container.appendChild(div);
+    });
+
+    // ========== COUNTER ANIMATION (Intersection Observer) ==========
+    const counters = document.querySelectorAll('.number');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const step = Math.ceil(target / 40);
+          const interval = setInterval(() => {
+            current += step;
+            if (current >= target) { el.innerText = target; clearInterval(interval); }
+            else el.innerText = current;
+          }, 30);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    // ========== PROGRESS BAR FILL (scroll & reveal) ==========
+    const progressFills = document.querySelectorAll('.progress-fill');
+    const fillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target;
+          const width = fill.dataset.width;
+          fill.style.width = width + '%';
+          fillObserver.unobserve(fill);
+        }
+      });
+    }, { threshold: 0.3 });
+    progressFills.forEach(f => fillObserver.observe(f));
+
+    // ========== REVEAL ON SCROLL ==========
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ========== SCROLL PROGRESS ==========
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+      // back to top
+      const back = document.getElementById('backTop');
+      if (scrollTop > 400) back.classList.add('visible');
+      else back.classList.remove('visible');
+    });
+
+    document.getElementById('backTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ========== HAMBURGER ==========
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+  </script>
+</body>
+</html>
